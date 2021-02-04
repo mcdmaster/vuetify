@@ -57,6 +57,7 @@ export default BaseItemGroup.extend({
 
   data () {
     return {
+      changedByDelimiters: false,
       internalHeight: undefined as undefined | string, // This can be fixed by child class.
       transitionHeight: undefined as undefined | string, // Intermediate height during transition.
       transitionCount: 0, // Number of windows in transition state.
@@ -138,21 +139,32 @@ export default BaseItemGroup.extend({
       icon: string,
       click: () => void
     ) {
+      const on = {
+        click: (e: Event) => {
+          e.stopPropagation()
+          this.changedByDelimiters = true
+          click()
+        },
+      }
+      const attrs = {
+        'aria-label': this.$vuetify.lang.t(`$vuetify.carousel.${direction}`),
+      }
+      const children = this.$scopedSlots[direction]?.({
+        on,
+        attrs,
+      }) ?? [this.$createElement(VBtn, {
+        props: { icon: true },
+        attrs,
+        on,
+      }, [
+        this.$createElement(VIcon, {
+          props: { large: true },
+        }, icon),
+      ])]
+
       return this.$createElement('div', {
         staticClass: `v-window__${direction}`,
-      }, [
-        this.$createElement(VBtn, {
-          props: { icon: true },
-          attrs: {
-            'aria-label': this.$vuetify.lang.t(`$vuetify.carousel.${direction}`),
-          },
-          on: { click },
-        }, [
-          this.$createElement(VIcon, {
-            props: { large: true },
-          }, icon),
-        ]),
-      ])
+      }, children)
     },
     genControlIcons () {
       const icons = []
@@ -222,7 +234,10 @@ export default BaseItemGroup.extend({
       this.internalValue = this.getValue(item, lastIndex)
     },
     updateReverse (val: number, oldVal: number) {
-      const lastIndex = this.items.length - 1
+      const itemsLength = this.items.length
+      const lastIndex = itemsLength - 1
+
+      if (itemsLength <= 2) return val < oldVal
 
       if (val === lastIndex && oldVal === 0) {
         return true
