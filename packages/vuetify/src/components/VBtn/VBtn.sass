@@ -1,0 +1,92 @@
+// Imports
+@import ./index
+
+.v-btn
+  align-items: center
+  border-radius: $button-border-radius
+  display: inline-flex
+  font-weight: $button-font-weight
+  justify-content: center
+  letter-spacing: $button-text-letter-spacing
+  line-height: $button-line-height
+  outline: none
+  overflow: visible
+  position: relative
+  text-decoration: none
+  text-indent: $button-text-letter-spacing
+  text-transform: $button-text-transform
+  transition-property: box-shadow, transform, opacity
+  transition: 0.28s $standard-easing
+  user-select: none
+  vertical-align: $button-vertical-align
+
+  @at-root
+    +sizes('v-btn', $button-sizes)
+    +density('v-btn', 'height', $button-density)
+
+  +states('.v-btn__overlay')
+
+  &--icon
+    border-radius: $button-icon-border-radius
+    min-width: 0
+    padding: 0
+
+    @at-root &
+      +density('v-btn', ('width', 'height'), $button-icon-density)
+
+  &--border
+    +border($button-border-color, $button-border-style, $button-border-width)
+
+  &--elevated
+    +elevation(map-get($button-elevation, 'default'))
+
+    &:hover,
+    &:focus
+      +elevation(map-get($button-elevation, 'hover'))
+
+    &:active
+      +elevation(map-get($button-elevation, 'active'))
+
+  &--plain
+    opacity: .62
+
+    &:focus,
+    &:hover,
+    &.v-btn--active
+      opacity: 1
+
+    .v-btn__overlay
+      display: none
+
+  &--block
+    display: flex
+    flex: 1 0 auto
+    min-width: 100%
+
+  &--disabled
+    pointer-events: none
+
+    &.v-btn--disabled
+      color: rgba(var(--v-theme-on-surface), $button-disabled-opacity)
+      opacity: 1
+
+    &.v-btn--contained
+      background: rgb(var(--v-theme-surface))
+      box-shadow: none
+
+      .v-btn__overlay
+        // This is multiplied by the text opacity,
+        // so we need to divide it to get the desired value
+        opacity: ($button-disabled-overlay / $button-disabled-opacity)
+
+.v-btn__overlay
+  background-color: currentColor
+  border-radius: inherit
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  pointer-events: none
+  opacity: 0
+  transition: opacity 0.2s ease-in-out

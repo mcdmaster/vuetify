@@ -1,0 +1,6 @@
+{
+  "props": {
+    "border": "Applies border styles to component.",
+    "outlined": "Applies the outlined border style."
+  }
+}
