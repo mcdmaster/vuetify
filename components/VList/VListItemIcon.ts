@@ -1,0 +1,19 @@
+// @ts-nocheck
+/* eslint-disable */
+
+// Types
+import Vue, { VNode } from 'vue'
+
+/* @vue/component */
+export default options
+const options: ThisType<typeof Vue> = {
+  name: 'v-list-item-icon',
+
+  functional: true,
+
+  render (h, { data, children }): VNode {
+    data.staticClass = (`v-list-item__icon ${data.staticClass || ''}`).trim()
+
+    return h('div', data, children)
+  },
+}

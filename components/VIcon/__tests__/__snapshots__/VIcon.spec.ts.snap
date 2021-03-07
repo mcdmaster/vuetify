@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VIcon should add custom class 1`] = ``;
+
+exports[`VIcon should add custom style 1`] = ``;
+
+exports[`VIcon should render an svg icon 1`] = ``;
+
+exports[`VIcon should render globally defined icon 1`] = ``;
+
+exports[`VIcon should render ligature icon 1`] = ``;
+
+exports[`VIcon should support an icon name in the default slot 1`] = ``;
