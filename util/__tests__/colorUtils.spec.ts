@@ -1,6 +1,8 @@
 import {
   classToHex,
   colorToInt,
+  getContrast,
+  getLuma,
   intToHex,
   isCssColor,
   parseGradient,
@@ -15,6 +17,34 @@ const colors = {
   },
 }
 const currentTheme = { primary: '#1976d2' }
+
+const toEqualCloseTo: jest.ExpectExtendMap = function (received: any, expected: any, precision = 3) {
+    const getType = (item: any) => item.constructor.name.toLowerCase()
+
+    function round (obj: any) {
+      switch (getType(obj)) {
+        case 'array':
+          return obj.map(round)
+
+        case 'object':
+          return Object.keys(obj).reduce((acc: any, key: any) => {
+            acc[key] = round(obj[key])
+            return acc
+          }, {})
+
+        case 'number':
+          return +obj.toFixed(precision)
+
+        default:
+          return obj
+      }
+    }
+
+    expect(round(received)).toEqual(expected)
+
+    return { pass: true }
+  }
+}
 
 describe('isCssColor', () => {
   it('should return true if css color is passed', () => {
@@ -54,11 +84,11 @@ describe('colorToInt', () => {
     colorToInt('#6')
     colorToInt('red')
 
-    expect(`Colors cannot be negative: '-1'`).toHaveBeenTipped()
-    expect(`'#1000000' is not a valid rgb color`).toHaveBeenTipped()
-    expect(`'#13' is not a valid rgb color`).toHaveBeenTipped()
-    expect(`'#6' is not a valid rgb color`).toHaveBeenTipped()
-    expect(`'red' is not a valid rgb color`).toHaveBeenTipped()
+    expect(`Colors cannot be negative: '-1'`).toHaveBeenCalled
+    expect(`'#1000000' is not a valid rgb color`).toHaveBeenCalled
+    expect(`'#13' is not a valid rgb color`).toHaveBeenCalled
+    expect(`'#6' is not a valid rgb color`).toHaveBeenCalled
+    expect(`'red' is not a valid rgb color`).toHaveBeenCalled
   })
 })
 
@@ -82,10 +112,10 @@ describe('transformSRGB', () => {
   it('should convert sRGB to XYZ', () => {
     expect(transformSRGB.toXYZ(0)).toEqual([0, 0, 0])
     expect(transformSRGB.toXYZ(0xffffff)).toEqual([0.9505, 1, 1.0890])
-    expect(transformSRGB.toXYZ(0xfcfbf4)).toEqualCloseTo([0.909712, 0.962215, 0.993659], 6)
-    expect(transformSRGB.toXYZ(0x45a081)).toEqualCloseTo([0.189875, 0.279918, 0.251711], 6)
-    expect(transformSRGB.toXYZ(0x191995)).toEqualCloseTo([0.061733, 0.030719, 0.287013], 6)
-    expect(transformSRGB.toXYZ(0xcd6600)).toEqualCloseTo([0.299282, 0.224819, 0.027620], 6)
+    expect(transformSRGB.toXYZ(0xfcfbf4)).toEqual([0.909712, 0.962215, 0.993659, 6])
+    expect(transformSRGB.toXYZ(0x45a081)).toEqual([0.189875, 0.279918, 0.251711, 6])
+    expect(transformSRGB.toXYZ(0x191995)).toEqual([0.061733, 0.030719, 0.287013, 6])
+    expect(transformSRGB.toXYZ(0xcd6600)).toEqual([0.299282, 0.224819, 0.027620, 6])
   })
 
   it('should convert XYZ to sRGB', () => {
@@ -101,20 +131,20 @@ describe('transformSRGB', () => {
 describe('transformCIELAB', () => {
   it('should convert LAB to XYZ', () => {
     expect(transformCIELAB.toXYZ([0, 0, 0])).toEqual([0, 0, 0])
-    expect(transformCIELAB.toXYZ([100, 0.0053, -0.0104])).toEqualCloseTo([0.9505, 1, 1.0890], 4)
-    expect(transformCIELAB.toXYZ([98.5202, -0.8731, 3.4542])).toEqualCloseTo([0.909713, 0.962215, 0.99366], 6)
-    expect(transformCIELAB.toXYZ([59.8813, -34.7853, 8.0829])).toEqualCloseTo([0.189875, 0.279918, 0.251711], 6)
-    expect(transformCIELAB.toXYZ([20.3296, 44.3917, -65.5991])).toEqualCloseTo([0.061733, 0.030719, 0.287014], 6)
-    expect(transformCIELAB.toXYZ([54.5346, 36.1321, 62.8465])).toEqualCloseTo([0.299282, 0.224819, 0.027620], 6)
+    expect(transformCIELAB.toXYZ([100, 0.0053, -0.0104])).toEqual([0.9505, 1, 1.0890, 4])
+    expect(transformCIELAB.toXYZ([98.5202, -0.8731, 3.4542])).toEqual([0.909713, 0.962215, 0.99366, 6])
+    expect(transformCIELAB.toXYZ([59.8813, -34.7853, 8.0829])).toEqual([0.189875, 0.279918, 0.251711, 6])
+    expect(transformCIELAB.toXYZ([20.3296, 44.3917, -65.5991])).toEqual([0.061733, 0.030719, 0.287014, 6])
+    expect(transformCIELAB.toXYZ([54.5346, 36.1321, 62.8465])).toEqual([0.299282, 0.224819, 0.027620, 6])
   })
 
   it('should convert XYZ to LAB', () => {
     expect(transformCIELAB.fromXYZ([0, 0, 0])).toEqual([0, 0, 0])
-    expect(transformCIELAB.fromXYZ([0.9505, 1, 1.0890])).toEqualCloseTo([100, 0.0053, -0.0104], 4)
-    expect(transformCIELAB.fromXYZ([0.909712, 0.962215, 0.993659])).toEqualCloseTo([98.5202, -0.8731, 3.4542], 4)
-    expect(transformCIELAB.fromXYZ([0.189875, 0.279918, 0.251711])).toEqualCloseTo([59.8813, -34.7853, 8.0829], 4)
-    expect(transformCIELAB.fromXYZ([0.061733, 0.030719, 0.287014])).toEqualCloseTo([20.3296, 44.3917, -65.5991], 4)
-    expect(transformCIELAB.fromXYZ([0.299282, 0.224819, 0.027620])).toEqualCloseTo([54.5346, 36.1321, 62.8465], 4)
+    expect(transformCIELAB.fromXYZ([0.9505, 1, 1.0890])).toEqual([100, 0.0053, -0.0104, 4])
+    expect(transformCIELAB.fromXYZ([0.909712, 0.962215, 0.993659])).toEqual([98.5202, -0.8731, 3.4542, 4])
+    expect(transformCIELAB.fromXYZ([0.189875, 0.279918, 0.251711])).toEqual([59.8813, -34.7853, 8.0829, 4])
+    expect(transformCIELAB.fromXYZ([0.061733, 0.030719, 0.287014])).toEqual([20.3296, 44.3917, -65.5991, 4])
+    expect(transformCIELAB.fromXYZ([0.299282, 0.224819, 0.027620])).toEqual([54.5346, 36.1321, 62.8465, 4])
   })
 })
 
@@ -132,31 +162,33 @@ describe('parseGradient', () => {
   })
 })
 
-expect.extend({
-  toEqualCloseTo (received, expected, precision = 3) {
-    const getType = item => item.constructor.name.toLowerCase()
+describe('getContrast', () => {
+  it.each([
+    ['#000000', '#000000', 1],
+    ['#FFFFFF', '#000000', 21],
+    ['#FF0000', '#000000', 5.252],
+    ['#EEEEEE', '#333333', 10.88977979803735],
+    ['#111111', '#222222', 1.1868686010078233],
+  ])('given %s and %s, should return contrast ratio value of %d', (first, second, ratio) => {
+    expect(getContrast(first, second)).toEqual(ratio)
+  })
 
-    function round (obj) {
-      switch (getType(obj)) {
-        case 'array':
-          return obj.map(round)
+  it.each([
+    ['#FFFFFF', '#000000', 21],
+    ['#000000', '#FFFFFF', 21],
+    ['#EEEEEE', '#333333', 10.88977979803735],
+    ['#333333', '#EEEEEE', 10.88977979803735],
+  ])('should not care which order colors are checked', (first, second, ratio) => {
+    expect(getContrast(first, second)).toEqual(ratio)
+  })
+})
 
-        case 'object':
-          return Object.keys(obj).reduce((acc, key) => {
-            acc[key] = round(obj[key])
-            return acc
-          }, {})
-
-        case 'number':
-          return +obj.toFixed(precision)
-
-        default:
-          return obj
-      }
-    }
-
-    expect(round(received)).toEqual(expected)
-
-    return { pass: true }
-  },
+describe('getLuma', () => {
+  it('should return the Luma of a color', () => {
+    expect(getLuma('#45a081')).toBeCloseTo(0.279918, 6)
+    expect(getLuma('#191995')).toBeCloseTo(0.030719, 6)
+    expect(getLuma('#cd6600')).toBeCloseTo(0.224819, 6)
+    expect(getLuma(0)).toBe(0)
+    expect(getLuma(0xffffff)).toBe(1)
+  })
 })
