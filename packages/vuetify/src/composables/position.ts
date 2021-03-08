@@ -1,5 +1,5 @@
 // Utilities
-import type { PropType } from 'vue'
+import { PropType } from 'vue'
 import { computed } from 'vue'
 import { convertToUnit } from '@/util/helpers'
 import propsFactory from '@/util/propsFactory'

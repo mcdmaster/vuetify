@@ -372,7 +372,7 @@ describe.skip('VTextField.ts', () => { // eslint-disable-line max-statements
       icons: {},
       rtl: false,
     }
-    const progress = Vue.component('test', {
+    const progress = defineComponent('test', {
       render (h) {
         return h(VProgressLinear, {
           props: {

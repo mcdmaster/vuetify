@@ -3,7 +3,7 @@ import { h, resolveComponent } from 'vue'
 import { aliases as faAliases } from './fa'
 
 // Types
-import type { IconSet } from '@/composables/icons'
+import { IconSet } from '@/composables/icons'
 
 const aliases = faAliases
 

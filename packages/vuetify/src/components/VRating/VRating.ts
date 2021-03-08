@@ -32,13 +32,13 @@ type ItemSlotProps = {
 }
 
 /* @vue/component */
-export default mixins(
-  Colorable,
-  Delayable,
-  Rippleable,
-  Sizeable,
+export default defineComponent<
+  Colorable &
+  Delayable &
+  Rippleable &
+  Sizeable &
   Themeable
-).extend({
+> ({
   name: 'v-rating',
 
   props: {

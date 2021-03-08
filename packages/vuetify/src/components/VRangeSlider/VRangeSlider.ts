@@ -19,7 +19,7 @@ import {
 import { PropValidator } from 'vue/types/options'
 
 /* @vue/component */
-export default VSlider.extend({
+export default defineComponent<VSlider> ({
   name: 'v-range-slider',
 
   props: {

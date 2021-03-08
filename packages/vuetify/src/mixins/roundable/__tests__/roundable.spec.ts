@@ -9,7 +9,7 @@ import {
 } from '@vue/test-utils'
 
 describe.skip('rippleable.ts', () => {
-  const Mock = Roundable.extend({
+  const Mock = defineComponent<Roundable> ({
     render (h) {
       return h('div', {
         class: this.roundableClasses,

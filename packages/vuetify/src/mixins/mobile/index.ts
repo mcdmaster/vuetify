@@ -7,7 +7,7 @@ import { deprecate } from '../../util/console'
 import Vue, { PropType } from 'vue'
 
 /* @vue/component */
-export default Vue.extend({
+export default defineComponent({
   name: 'mobile',
 
   props: {

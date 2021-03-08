@@ -26,14 +26,14 @@ import {
 } from '../util/timestamp'
 import { CalendarTimestamp, CalendarFormatter } from 'vuetify/types'
 
-export default mixins(
-  Colorable,
-  Localable,
-  Mouse,
-  Themeable,
+export default defineComponent<
+  Colorable &
+  Localable &
+  Mouse &
+  Themeable &
   Times
 /* @vue/component */
-).extend({
+> ({
   name: 'calendar-base',
 
   directives: {

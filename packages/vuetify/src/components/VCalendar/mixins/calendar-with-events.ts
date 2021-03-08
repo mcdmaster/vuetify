@@ -77,7 +77,7 @@ const WIDTH_START = 95
 const MINUTES_IN_DAY = 1440
 
 /* @vue/component */
-export default CalendarBase.extend({
+export default defineComponent<CalendarBase> ({
   name: 'calendar-with-events',
 
   directives: {

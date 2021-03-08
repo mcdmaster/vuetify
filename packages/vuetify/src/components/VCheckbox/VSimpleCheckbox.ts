@@ -16,7 +16,7 @@ import Themeable from '../../mixins/themeable'
 import mergeData from '../../util/mergeData'
 import { wrapInArray } from '../../util/helpers'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'v-simple-checkbox',
 
   functional: true,

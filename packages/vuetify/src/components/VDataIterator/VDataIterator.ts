@@ -20,10 +20,10 @@ import { PropValidator } from 'vue/types/options'
 import { DataItemProps, DataScopeProps } from 'vuetify/types'
 
 /* @vue/component */
-export default mixins(
-  Mobile,
+export default defineComponent<
+  Mobile &
   Themeable
-).extend({
+> ({
   name: 'v-data-iterator',
 
   props: {

@@ -110,7 +110,7 @@ describe.skip('VEditDialog.ts', () => {
         </v-edit-dialog>
       `,
       components: {
-        'v-edit-dialog': mixins(VEditDialog).extend({
+        'v-edit-dialog': defineComponent<VEditDialog> ({
           render () {
             return this.genContent()
           },

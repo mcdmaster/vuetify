@@ -31,7 +31,7 @@ const baseMixins = mixins(
 )
 
 /* @vue/component */
-export default baseMixins.extend({
+export default defineComponent<baseMixins> ({
   name: 'v-progress-linear',
 
   props: {

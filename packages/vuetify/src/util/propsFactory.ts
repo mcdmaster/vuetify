@@ -1,4 +1,4 @@
-import type { ComponentObjectPropsOptions, Prop, PropType } from 'vue'
+import { ComponentObjectPropsOptions, Prop, PropType } from 'vue'
 
 /**
  * Creates a factory function for props definitions.

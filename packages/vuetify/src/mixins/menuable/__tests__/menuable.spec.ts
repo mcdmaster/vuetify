@@ -9,7 +9,7 @@ import {
 } from '@vue/test-utils'
 
 describe.skip('menuable.ts', () => {
-  const Mock = Menuable.extend({
+  const Mock = defineComponent<Menuable> ({
     render: h => h('div'),
   })
 

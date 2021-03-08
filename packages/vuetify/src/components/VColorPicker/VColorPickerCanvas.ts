@@ -11,7 +11,7 @@ import { fromHSVA, VColorPickerColor, fromRGBA } from './util'
 // Types
 import Vue, { VNode, PropType } from 'vue'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'v-color-picker-canvas',
 
   props: {

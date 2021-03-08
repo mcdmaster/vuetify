@@ -93,7 +93,7 @@ export const VTreeviewNodeProps = {
 }
 
 /* @vue/component */
-const VTreeviewNode = baseMixins.extend<options>().extend({
+const VTreeviewNode = defineComponent<baseMixins> ({
   name: 'v-treeview-node',
 
   inject: {

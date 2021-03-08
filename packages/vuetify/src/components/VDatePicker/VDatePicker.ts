@@ -46,11 +46,11 @@ interface Formatters {
   titleDate: DatePickerFormatter | DatePickerMultipleFormatter
 }
 
-export default mixins(
-  Localable,
-  Picker,
+export default defineComponent<
+  Localable &
+  Picker
 /* @vue/component */
-).extend({
+> ({
   name: 'v-date-picker',
 
   props: {

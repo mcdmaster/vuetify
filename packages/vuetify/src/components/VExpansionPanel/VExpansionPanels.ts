@@ -15,7 +15,7 @@ import { breaking } from '../../util/console'
 interface VExpansionPanelInstance extends InstanceType<typeof VExpansionPanel> {}
 
 /* @vue/component */
-export default BaseItemGroup.extend({
+export default defineComponent<BaseItemGroup> ({
   name: 'v-expansion-panels',
 
   provide (): object {

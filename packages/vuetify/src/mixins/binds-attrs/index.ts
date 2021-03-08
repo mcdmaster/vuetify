@@ -21,7 +21,7 @@ function makeWatcher (property: string): ThisType<Vue> & WatchHandler<any> {
   }
 }
 
-export default Vue.extend({
+export default defineComponent({
   data: () => ({
     attrs$: {} as Dictionary<string>,
     listeners$: {} as Dictionary<Function | Function[]>,

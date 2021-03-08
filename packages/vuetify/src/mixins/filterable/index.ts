@@ -4,7 +4,7 @@
 import Vue from 'vue'
 
 /* @vue/component */
-export default Vue.extend({
+export default defineComponent({
   name: 'filterable',
 
   props: {

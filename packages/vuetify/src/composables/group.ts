@@ -5,7 +5,7 @@ import { consoleWarn } from '@/util/console'
 import { useProxiedModel } from './proxiedModel'
 
 // Types
-import type { Ref, UnwrapRef, InjectionKey } from 'vue'
+import { Ref, UnwrapRef, InjectionKey } from 'vue'
 
 interface GroupItem {
   id: number

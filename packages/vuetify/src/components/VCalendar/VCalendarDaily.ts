@@ -21,7 +21,7 @@ import { convertToUnit, getSlot } from '../../util/helpers'
 import { CalendarTimestamp } from 'vuetify/types'
 
 /* @vue/component */
-export default CalendarWithIntervals.extend({
+export default defineComponent<CalendarWithIntervals> ({
   name: 'v-calendar-daily',
 
   directives: { Resize },

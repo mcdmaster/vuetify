@@ -25,7 +25,7 @@ interface options extends ExtractVue<typeof baseMixins> {
   timeline: VTimelineInstance
 }
 
-export default baseMixins.extend<options>().extend({
+export default defineComponent<baseMixins> ({
   name: 'v-timeline-item',
 
   inject: ['timeline'],

@@ -1,5 +1,5 @@
 // Types
-import type { Ref } from 'vue'
+import { Ref } from 'vue'
 
 // Utilities
 import { ref, computed, getCurrentInstance, capitalize } from 'vue'

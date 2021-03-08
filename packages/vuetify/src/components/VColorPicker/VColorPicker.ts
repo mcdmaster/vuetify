@@ -23,7 +23,7 @@ import Themeable from '../../mixins/themeable'
 // Types
 import { VNode, PropType } from 'vue'
 
-export default mixins(Elevatable, Themeable).extend({
+export default defineComponent<Elevatable & Themeable> ({
   name: 'v-color-picker',
 
   props: {

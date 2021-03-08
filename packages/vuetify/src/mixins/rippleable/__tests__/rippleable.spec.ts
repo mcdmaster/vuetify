@@ -9,7 +9,7 @@ import {
 } from '@vue/test-utils'
 
 describe.skip('rippleable.ts', () => {
-  const Mock = Rippleable.extend({
+  const Mock = defineComponent<Rippleable> ({
     render () {
       return this.genRipple()
     },

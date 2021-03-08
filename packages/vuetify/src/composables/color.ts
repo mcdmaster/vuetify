@@ -3,7 +3,7 @@ import { computed, isRef } from 'vue'
 import { isCssColor } from '@/util/colorUtils'
 
 // Types
-import type { Ref, CSSProperties } from 'vue'
+import { Ref, CSSProperties } from 'vue'
 
 type ColorValue = string | null | undefined
 

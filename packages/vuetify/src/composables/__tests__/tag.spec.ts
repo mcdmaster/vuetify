@@ -4,7 +4,7 @@ import { makeTagProps } from '../tag'
 import { mount } from '@vue/test-utils'
 
 // Types
-import type { TagProps } from '../tag'
+import { TagProps } from '../tag'
 
 describe('tag.ts', () => {
   it('should use custom tag on rendered output', () => {

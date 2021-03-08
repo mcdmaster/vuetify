@@ -2,7 +2,7 @@
 import { VClassIcon } from '@/composables/icons'
 
 // Types
-import type { IconSet, IconAliases } from '@/composables/icons'
+import { IconSet, IconAliases } from '@/composables/icons'
 
 const aliases: IconAliases = {
   complete: 'fas fa-check',

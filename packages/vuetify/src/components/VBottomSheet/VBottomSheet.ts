@@ -7,7 +7,7 @@ import './VBottomSheet.sass'
 import VDialog from '../VDialog/VDialog'
 
 /* @vue/component */
-export default VDialog.extend({
+export default defineComponent<VDialog> ({
   name: 'v-bottom-sheet',
 
   props: {

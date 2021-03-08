@@ -25,11 +25,11 @@ import { VNodeData } from 'vue'
 import { VNode } from 'vue/types'
 
 /* @vue/component */
-export default mixins(
-  VSheet,
-  Toggleable,
+export default defineComponent<
+  VSheet &
+  Toggleable &
   Transitionable
-).extend({
+> ({
   name: 'v-alert',
 
   props: {

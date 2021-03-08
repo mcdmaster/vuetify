@@ -18,34 +18,6 @@ const colors = {
 }
 const currentTheme = { primary: '#1976d2' }
 
-const toEqualCloseTo: jest.ExpectExtendMap = function (received: any, expected: any, precision = 3) {
-    const getType = (item: any) => item.constructor.name.toLowerCase()
-
-    function round (obj: any) {
-      switch (getType(obj)) {
-        case 'array':
-          return obj.map(round)
-
-        case 'object':
-          return Object.keys(obj).reduce((acc: any, key: any) => {
-            acc[key] = round(obj[key])
-            return acc
-          }, {})
-
-        case 'number':
-          return +obj.toFixed(precision)
-
-        default:
-          return obj
-      }
-    }
-
-    expect(round(received)).toEqual(expected)
-
-    return { pass: true }
-  }
-}
-
 describe('isCssColor', () => {
   it('should return true if css color is passed', () => {
     expect(isCssColor('#ff0000')).toBeTruthy()

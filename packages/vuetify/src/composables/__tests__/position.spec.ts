@@ -2,7 +2,7 @@
 import { usePosition } from '../position'
 
 // Types
-import type { PositionProps } from '../position'
+import { PositionProps } from '../position'
 
 describe('position.ts', () => {
   it.each([

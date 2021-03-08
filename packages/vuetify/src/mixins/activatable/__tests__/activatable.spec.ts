@@ -16,7 +16,7 @@ import {
 // import { wait } from '../../../../test'
 
 describe.skip('activatable.ts', () => {
-  const Mock = Activatable.extend({
+  const Mock = defineComponent<Activatable> ({
     data: () => ({
       isActive: false,
     }),

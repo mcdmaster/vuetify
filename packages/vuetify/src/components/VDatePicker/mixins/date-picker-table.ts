@@ -20,6 +20,7 @@ import { throttle } from '../../../util/helpers'
 
 // Types
 import {
+  defineComponent,
   PropType,
   VNodeChildren,
 } from 'vue'
@@ -35,12 +36,12 @@ import {
 
 type CalculateTableDateFunction = (v: number) => string
 
-export default mixins(
-  Colorable,
-  Localable,
+export default defineComponent<
+  Colorable &
+  Localable &
   Themeable
 /* @vue/component */
-).extend({
+> ({
   directives: { Touch },
 
   props: {

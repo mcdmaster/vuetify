@@ -1,9 +1,9 @@
 // Types
-import type {
+import {
   DirectiveBinding,
   ObjectDirective,
 } from 'vue'
-import type {
+import {
   TouchHandlers,
   TouchValue,
   TouchWrapper,

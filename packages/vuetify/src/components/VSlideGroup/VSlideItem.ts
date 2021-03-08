@@ -8,10 +8,10 @@ import { BaseItem } from '../VItemGroup/VItem'
 import { factory as GroupableFactory } from '../../mixins/groupable'
 import mixins from '../../util/mixins'
 
-export default mixins(
-  BaseItem,
+export default defineComponent<
+  BaseItem &
   GroupableFactory('slideGroup')
   /* @vue/component */
-).extend({
+> ({
   name: 'v-slide-item',
 })

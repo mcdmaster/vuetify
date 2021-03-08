@@ -12,9 +12,9 @@ import { kebabCase } from '../../util/helpers'
 import { VNodeChildren } from 'vue'
 
 /* @vue/component */
-export default mixins(
+export default defineComponent<
   Colorable
-).extend({
+> ({
   methods: {
     genPickerButton (
       prop: string,

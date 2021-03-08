@@ -13,10 +13,10 @@ import Colorable from '../../mixins/colorable'
 // Utilities
 import mixins from '../../util/mixins'
 
-export default mixins(
-  BaseItemGroup,
+export default defineComponent<
+  BaseItemGroup &
   Colorable
-).extend({
+> ({
   name: 'v-list-item-group',
 
   provide () {

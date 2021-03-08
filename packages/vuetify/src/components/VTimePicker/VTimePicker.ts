@@ -28,11 +28,11 @@ export { SelectingTimes }
 type Period = 'am' | 'pm'
 type AllowFunction = (val: number) => boolean
 
-export default mixins(
-  Picker,
+export default defineComponent<
+  Picker &
   PickerButton
 /* @vue/component */
-).extend({
+> ({
   name: 'v-time-picker',
 
   props: {

@@ -13,7 +13,7 @@ import {
 // import { waitAnimationFrame } from '../../../../test'
 
 describe.skip('Overlayable.ts', () => {
-  const Mock = Overlayable.extend({
+  const Mock = defineComponent<Overlayable> ({
     data: () => ({
       isActive: false,
     }),

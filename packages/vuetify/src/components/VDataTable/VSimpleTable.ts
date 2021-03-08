@@ -8,7 +8,7 @@ import Themeable from '../../mixins/themeable'
 import mixins from '../../util/mixins'
 import { VNode } from 'vue'
 
-export default mixins(Themeable).extend({
+export default defineComponent<Themeable> ({
   name: 'v-simple-table',
 
   props: {

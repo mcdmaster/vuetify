@@ -28,7 +28,7 @@ interface options extends ExtractVue<typeof baseMixins> {
 }
 
 /* @vue/component */
-export default baseMixins.extend<options>().extend({
+export default defineComponent<baseMixins> ({
   name: 'menuable',
 
   props: {

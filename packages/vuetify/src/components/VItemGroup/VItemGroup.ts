@@ -22,10 +22,10 @@ export type GroupableInstance = InstanceType<typeof Groupable> & {
   value?: any
  }
 
-export const BaseItemGroup = mixins(
-  Proxyable,
+export const BaseItemGroup = defineComponent<
+  Proxyable &
   Themeable
-).extend({
+> ({
   name: 'base-item-group',
 
   props: {
@@ -259,7 +259,7 @@ export const BaseItemGroup = mixins(
   },
 })
 
-export default BaseItemGroup.extend({
+export default defineComponent<BaseItemGroup> ({
   name: 'v-item-group',
 
   provide (): object {

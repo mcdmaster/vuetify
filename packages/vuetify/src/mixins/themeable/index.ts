@@ -1,7 +1,7 @@
 // @ts-nocheck
 /* eslint-disable */
 
-import Vue from 'vue'
+import Vue, { defineComponent } from 'vue'
 import { PropType, RenderContext } from 'vue/types/options'
 
 interface options extends Vue {
@@ -11,7 +11,7 @@ interface options extends Vue {
 }
 
 /* @vue/component */
-const Themeable = Vue.extend<options>().extend({
+const Themeable = defineComponent<options> ({
   name: 'themeable',
 
   provide (): object {

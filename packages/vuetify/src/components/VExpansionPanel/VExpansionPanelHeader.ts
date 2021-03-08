@@ -30,7 +30,7 @@ interface options extends ExtractVue<typeof baseMixins> {
   expansionPanel: InstanceType<typeof VExpansionPanel>
 }
 
-export default baseMixins.extend<options>().extend({
+export default defineComponent<baseMixins> ({
   name: 'v-expansion-panel-header',
 
   directives: { ripple },

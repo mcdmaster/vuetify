@@ -2,7 +2,7 @@
 import { useDimension } from '../dimensions'
 
 // Types
-import type { DimensionProps } from '../dimensions'
+import { DimensionProps } from '../dimensions'
 
 describe('dimensions.ts', () => {
   it.each([

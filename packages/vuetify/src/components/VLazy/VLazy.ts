@@ -16,10 +16,10 @@ import { getSlot } from '../../util/helpers'
 import { VNode } from 'vue'
 import { PropValidator } from 'vue/types/options'
 
-export default mixins(
-  Measurable,
+export default defineComponent<
+  Measurable &
   Toggleable
-).extend({
+> ({
   name: 'VLazy',
 
   directives: { intersect },

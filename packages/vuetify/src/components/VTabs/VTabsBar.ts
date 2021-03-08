@@ -20,12 +20,12 @@ import { VNode } from 'vue'
 
 type VTabInstance = InstanceType<typeof VTab>
 
-export default mixins(
-  BaseSlideGroup,
-  SSRBootable,
+export default defineComponent<
+  BaseSlideGroup &
+  SSRBootable &
   Themeable
   /* @vue/component */
-).extend({
+> ({
   name: 'v-tabs-bar',
 
   provide () {

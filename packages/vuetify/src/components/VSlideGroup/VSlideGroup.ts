@@ -42,18 +42,15 @@ interface options extends Vue {
   }
 }
 
-export const BaseSlideGroup = mixins<options &
+export const BaseSlideGroup = defineComponent<options &
 /* eslint-disable indent */
   ExtractVue<[
     typeof BaseItemGroup,
     typeof Mobile,
   ]>
 /* eslint-enable indent */
->(
-  BaseItemGroup,
-  Mobile,
   /* @vue/component */
-).extend({
+> ({
   name: 'base-slide-group',
 
   directives: {
@@ -421,7 +418,7 @@ export const BaseSlideGroup = mixins<options &
   },
 })
 
-export default BaseSlideGroup.extend({
+export default defineComponent<BaseSlideGroup> ({
   name: 'v-slide-group',
 
   provide (): object {

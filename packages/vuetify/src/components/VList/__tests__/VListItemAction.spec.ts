@@ -42,10 +42,10 @@ describe.skip('VListItemAction.ts', () => {
   })
 
   it('should render component with many children and match snapshot', () => {
-    const content1 = mount(Vue.component('content1', {
+    const content1 = mount(defineComponent('content1', {
       render: h => h('div'),
     })).vNode
-    const content2 = mount(Vue.component('content2', {
+    const content2 = mount(defineComponent('content2', {
       render: h => h('span'),
     })).vNode
     const wrapper = mountFunction(functionalContext({}, [content1, content2]))
@@ -54,10 +54,10 @@ describe.skip('VListItemAction.ts', () => {
   })
 
   it('should render component with one children and match snapshot', () => {
-    const visible = mount(Vue.component('visible', {
+    const visible = mount(defineComponent('visible', {
       render: h => { return h('div') || h() },
     })).vNode
-    const notVisible = mount(Vue.component('notVisible', {
+    const notVisible = mount(defineComponent('notVisible', {
       render: h => { return h() || h('span') },
     })).vNode
 

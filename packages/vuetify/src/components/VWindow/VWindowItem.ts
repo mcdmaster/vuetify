@@ -28,9 +28,9 @@ interface options extends ExtractVue<typeof baseMixins> {
   windowGroup: InstanceType<typeof VWindow>
 }
 
-export default baseMixins.extend<options>().extend(
+export default defineComponent<options> (
   /* @vue/component */
-).extend({
+{
   name: 'v-window-item',
 
   directives: {

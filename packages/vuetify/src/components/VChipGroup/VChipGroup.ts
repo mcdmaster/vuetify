@@ -14,10 +14,10 @@ import Colorable from '../../mixins/colorable'
 import mixins from '../../util/mixins'
 
 /* @vue/component */
-export default mixins(
-  BaseSlideGroup,
+export default defineComponent<
+  BaseSlideGroup &
   Colorable
-).extend({
+> ({
   name: 'v-chip-group',
 
   provide () {

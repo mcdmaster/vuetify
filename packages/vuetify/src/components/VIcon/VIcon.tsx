@@ -10,8 +10,8 @@ import { makeTagProps } from '@/composables/tag'
 import makeProps from '@/util/makeProps'
 
 // Types
-import type { IconValue } from '@/composables/icons'
-import type { PropType } from 'vue'
+import { IconValue } from '@/composables/icons'
+import { PropType } from 'vue'
 
 export default defineComponent({
   name: 'VIcon',

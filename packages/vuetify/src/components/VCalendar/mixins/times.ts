@@ -10,7 +10,7 @@ import {
 } from '../util/timestamp'
 import { CalendarTimestamp } from 'vuetify/types'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'times',
 
   props: {

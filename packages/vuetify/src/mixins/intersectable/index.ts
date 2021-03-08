@@ -13,10 +13,10 @@ import Vue from 'vue'
 export default function intersectable (options: { onVisible: string[] }) {
   if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
     // do nothing because intersection observer is not available
-    return Vue.extend({ name: 'intersectable' })
+    return defineComponent({ name: 'intersectable' })
   }
 
-  return Vue.extend({
+  return defineComponent({
     name: 'intersectable',
 
     mounted () {

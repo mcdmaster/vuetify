@@ -30,7 +30,7 @@ type VStepperStepInstance = InstanceType<typeof VStepperStep>
 type VStepperContentInstance = InstanceType<typeof VStepperContent>
 
 /* @vue/component */
-export default baseMixins.extend({
+export default defineComponent<baseMixins> ({
   name: 'v-stepper',
 
   provide (): object {

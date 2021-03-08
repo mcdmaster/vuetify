@@ -20,12 +20,12 @@ import mixins from '../../util/mixins'
 import { VNode, PropType } from 'vue'
 import { DatePickerFormatter } from 'vuetify/types'
 
-export default mixins(
-  Colorable,
-  Localable,
+export default defineComponent<
+  Colorable &
+  Localable &
   Themeable
 /* @vue/component */
-).extend({
+> ({
   name: 'v-date-picker-header',
 
   props: {

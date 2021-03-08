@@ -23,18 +23,15 @@ interface options extends Vue {
   $el: HTMLElement
 }
 
-export default mixins<options &
+export default defineComponent<options &
 /* eslint-disable indent */
   ExtractVue<[
     typeof Colorable,
     typeof Localable
   ]>
 /* eslint-enable indent */
->(
-  Colorable,
-  Localable
 /* @vue/component */
-).extend({
+({
   name: 'v-date-picker-years',
 
   props: {

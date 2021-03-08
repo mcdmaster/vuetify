@@ -15,7 +15,7 @@ import { keyCodes } from '../../util/helpers'
 import { PropValidator } from 'vue/types/options'
 
 /* @vue/component */
-export default VAutocomplete.extend({
+export default defineComponent<VAutocomplete> ({
   name: 'v-combobox',
 
   props: {

@@ -12,14 +12,14 @@ import {
   watch,
   withDirectives,
 } from 'vue'
-import type { PropType } from 'vue'
+import { PropType } from 'vue'
 
 // Components
 import { VResponsive } from '../VResponsive'
 
 // Directives
 import intersect from '@/directives/intersect'
-import type { ObserveDirectiveBinding } from '@/directives/intersect'
+import { ObserveDirectiveBinding } from '@/directives/intersect'
 
 // Utils
 import makeProps from '@/util/makeProps'

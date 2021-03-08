@@ -19,7 +19,7 @@ interface options extends InstanceType<typeof VSheet> {
 }
 
 /* @vue/component */
-export default VSheet.extend<options>().extend({
+export default defineComponent<VSheet> ({
   name: 'v-list',
 
   provide (): object {

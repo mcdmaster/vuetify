@@ -23,7 +23,7 @@ import { breaking } from '../../util/console'
 // Types
 import { VNode, PropType } from 'vue'
 
-export default VWindow.extend({
+export default defineComponent<VWindow> ({
   name: 'v-carousel',
 
   props: {

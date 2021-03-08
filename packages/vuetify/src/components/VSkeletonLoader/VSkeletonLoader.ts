@@ -25,11 +25,11 @@ export interface HTMLSkeletonLoaderElement extends HTMLElement {
 }
 
 /* @vue/component */
-export default mixins(
-  Elevatable,
-  Measurable,
-  Themeable,
-).extend({
+export default defineComponent<
+  Elevatable &
+  Measurable &
+  Themeable
+> ({
   name: 'VSkeletonLoader',
 
   props: {

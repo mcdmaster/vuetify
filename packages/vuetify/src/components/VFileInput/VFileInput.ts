@@ -18,7 +18,7 @@ import { deepEqual, humanReadableFileSize, wrapInArray } from '../../util/helper
 import { consoleError } from '../../util/console'
 import { mergeStyles } from '../../util/mergeData'
 
-export default VTextField.extend({
+export default defineComponent<VTextField> ({
   name: 'v-file-input',
 
   model: {

@@ -10,7 +10,7 @@ import { consoleWarn } from '@/util/console'
 import propsFactory from '@/util/propsFactory'
 
 // Types
-import type { Ref } from 'vue'
+import { Ref } from 'vue'
 
 export interface ScrollProps {
   scrollTarget?: string

@@ -16,11 +16,11 @@ import mixins from '../../util/mixins'
 import { VNode } from 'vue'
 
 /* @vue/component */
-export default mixins(
-  Colorable,
-  Themeable,
+export default defineComponent<
+  Colorable &
+  Themeable &
   Toggleable
-).extend({
+> ({
   name: 'v-overlay',
 
   props: {

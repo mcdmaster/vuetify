@@ -9,7 +9,7 @@ import mixins from '../../util/mixins'
 
 export default function applicationable (value: TargetProp, events: string[] = []) {
   /* @vue/component */
-  return mixins(PositionableFactory(['absolute', 'fixed'])).extend({
+  return defineComponent<PositionableFactory(['absolute', 'fixed'])> ({
     name: 'applicationable',
 
     props: {

@@ -9,7 +9,7 @@ import VBtn from '../VBtn/VBtn'
 import Vue from 'vue'
 
 /* @vue/component */
-export default Vue.extend({
+export default defineComponent({
   name: 'v-app-bar-nav-icon',
 
   functional: true,

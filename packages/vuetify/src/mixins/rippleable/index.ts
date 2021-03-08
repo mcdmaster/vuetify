@@ -7,7 +7,7 @@ import ripple from '../../directives/ripple'
 // Types
 import Vue, { VNode, VNodeData, VNodeDirective } from 'vue'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'rippleable',
 
   directives: { ripple },

@@ -11,11 +11,11 @@ import { makeTagProps } from '@/composables/tag'
 import { useTheme } from '@/composables/theme'
 
 // Types
-import type { BorderProps } from '@/composables/border'
-import type { BorderRadiusProps } from '@/composables/border-radius'
-import type { DimensionProps } from '@/composables/dimensions'
-import type { ElevationProps } from '@/composables/elevation'
-import type { PositionProps } from '@/composables/position'
+import { BorderProps } from '@/composables/border'
+import { BorderRadiusProps } from '@/composables/border-radius'
+import { DimensionProps } from '@/composables/dimensions'
+import { ElevationProps } from '@/composables/elevation'
+import { PositionProps } from '@/composables/position'
 
 // Utilities
 import { defineComponent, computed } from 'vue'

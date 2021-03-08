@@ -12,10 +12,10 @@ import Colorable from '../../mixins/colorable'
 import mixins from '../../util/mixins'
 
 /* @vue/component */
-export default mixins(
-  ButtonGroup,
+export default defineComponent<
+  ButtonGroup &
   Colorable
-).extend({
+>({
   name: 'v-btn-toggle',
 
   props: {

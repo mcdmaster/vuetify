@@ -4,7 +4,7 @@ import { useVuetify } from '@/framework'
 import { wrapInArray } from '@/util/helpers'
 
 // Types
-import type { Prop } from 'vue'
+import { Prop } from 'vue'
 
 export default function makeProps<P extends Record<string, Prop<any>>> (props: P) {
   for (const key in props) {
