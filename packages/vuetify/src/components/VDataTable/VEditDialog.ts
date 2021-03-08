@@ -20,7 +20,7 @@ import { VNode, VNodeChildren } from 'vue'
 import mixins from '../../util/mixins'
 
 /* @vue/component */
-export default mixins(Returnable, Themeable).extend({
+export default defineComponent<Returnable & Themeable> ({
   name: 'v-edit-dialog',
 
   props: {

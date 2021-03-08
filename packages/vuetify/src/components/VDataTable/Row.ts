@@ -8,7 +8,7 @@ import { DataTableHeader } from 'vuetify/types'
 // Utils
 import { getObjectValueByPath } from '../../util/helpers'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'row',
 
   functional: true,

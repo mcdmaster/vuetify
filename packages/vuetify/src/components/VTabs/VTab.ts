@@ -26,9 +26,9 @@ interface options extends ExtractVue<typeof baseMixins> {
   $el: HTMLElement
 }
 
-export default baseMixins.extend<options>().extend(
+export default defineComponent<baseMixins> (
   /* @vue/component */
-).extend({
+{
   name: 'v-tab',
 
   props: {

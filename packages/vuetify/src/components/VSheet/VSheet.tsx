@@ -2,20 +2,19 @@
 import './VSheet.sass'
 
 // Composables
-import { makeBorderProps, useBorder } from '@/composables/border'
-import { makeBorderRadiusProps, useBorderRadius } from '@/composables/border-radius'
-import { makeDimensionProps, useDimension } from '@/composables/dimensions'
-import { makeElevationProps, useElevation } from '@/composables/elevation'
-import { makePositionProps, usePosition } from '@/composables/position'
+import {
+  makeBorderProps, useBorder,
+  BorderProps,
+} from '@/composables/border'
+import { makeBorderRadiusProps, useBorderRadius, BorderRadiusProps } from '@/composables/border-radius'
+import { makeDimensionProps, useDimension, DimensionProps } from '@/composables/dimensions'
+import { makeElevationProps, useElevation, ElevationProps } from '@/composables/elevation'
+import { makePositionProps, usePosition, PositionProps } from '@/composables/position'
 import { makeTagProps } from '@/composables/tag'
 import { useTheme } from '@/composables/theme'
 
 // Types
-import type { BorderProps } from '@/composables/border'
-import type { BorderRadiusProps } from '@/composables/border-radius'
-import type { DimensionProps } from '@/composables/dimensions'
-import type { ElevationProps } from '@/composables/elevation'
-import type { PositionProps } from '@/composables/position'
+// import { BorderProps } from '@/composables/border'
 
 // Utilities
 import { defineComponent, computed } from 'vue'

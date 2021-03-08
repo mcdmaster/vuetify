@@ -9,7 +9,7 @@ import Ripple, { RippleOptions } from '../../directives/ripple'
 // Utilities
 import { getObjectValueByPath } from '../../util/helpers'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'routable',
 
   directives: {

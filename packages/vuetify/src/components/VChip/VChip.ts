@@ -27,14 +27,14 @@ import { breaking } from '../../util/console'
 import { PropValidator, PropType } from 'vue/types/options'
 
 /* @vue/component */
-export default mixins(
-  Colorable,
-  Sizeable,
-  Routable,
-  Themeable,
-  GroupableFactory('chipGroup'),
+export default defineComponent<
+  Colorable &
+  Sizeable &
+  Routable &
+  Themeable &
+  GroupableFactory('chipGroup') &
   ToggleableFactory('inputValue')
-).extend({
+> ({
   name: 'v-chip',
 
   props: {

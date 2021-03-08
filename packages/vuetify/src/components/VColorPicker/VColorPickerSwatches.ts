@@ -43,7 +43,7 @@ function parseDefaultColors (colors: Record<string, Record<string, string>>) {
 const white = fromHex('#FFFFFF').rgba
 const black = fromHex('#000000').rgba
 
-export default mixins(Themeable).extend({
+export default defineComponent<Themeable> ({
   name: 'v-color-picker-swatches',
 
   props: {

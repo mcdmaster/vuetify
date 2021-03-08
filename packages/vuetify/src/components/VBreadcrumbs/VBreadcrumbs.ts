@@ -18,10 +18,10 @@ import Themeable from '../../mixins/themeable'
 // Utils
 import mixins from '../../util/mixins'
 
-export default mixins(
+export default defineComponent<
   Themeable
   /* @vue/component */
-).extend({
+> ({
   name: 'v-breadcrumbs',
 
   props: {

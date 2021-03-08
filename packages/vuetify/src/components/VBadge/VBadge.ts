@@ -24,14 +24,14 @@ import {
 // Types
 import { VNode } from 'vue'
 
-export default mixins(
-  Colorable,
-  PositionableFactory(['left', 'bottom']),
-  Themeable,
-  Toggleable,
-  Transitionable,
+export default defineComponent<
+  Colorable &
+  PositionableFactory(['left', 'bottom']) &
+  Themeable &
+  Toggleable &
+  Transitionable
 /* @vue/component */
-).extend({
+> ({
   name: 'v-badge',
 
   props: {

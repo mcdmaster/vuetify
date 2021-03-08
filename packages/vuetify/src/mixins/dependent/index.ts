@@ -34,7 +34,7 @@ function searchChildren (children: Vue[]): DependentInstance[] {
 }
 
 /* @vue/component */
-export default mixins<options>().extend({
+export default defineComponent<options> ({
   name: 'dependent',
 
   data () {

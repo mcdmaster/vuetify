@@ -29,18 +29,15 @@ interface options extends Vue {
   }
 }
 
-export default mixins<options &
+export default defineComponent<options &
 /* eslint-disable indent */
   ExtractVue<[
     typeof VInput,
     typeof Loadable
   ]>
 /* eslint-enable indent */
->(
-  VInput,
-  Loadable
 /* @vue/component */
-).extend({
+> ({
   name: 'v-slider',
 
   directives: {

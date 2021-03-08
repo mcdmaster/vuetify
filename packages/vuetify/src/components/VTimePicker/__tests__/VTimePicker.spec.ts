@@ -461,7 +461,7 @@ describe.skip('VTimePicker.ts', () => {
     it('should match snapshot with slot' + useSecondsDesc, async () => {
       const vm = new Vue()
       const slot = props => vm.$createElement('div', { class: 'scoped-slot' })
-      const component = Vue.component('test', {
+      const component = defineComponent('test', {
         render (h) {
           return h(VTimePicker, {
             props: {

@@ -5,7 +5,7 @@
 import { BaseItemGroup } from '../../components/VItemGroup/VItemGroup'
 
 /* @vue/component */
-export default BaseItemGroup.extend({
+export default defineComponent<BaseItemGroup> ({
   name: 'button-group',
 
   provide (): object {

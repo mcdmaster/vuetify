@@ -2,10 +2,13 @@
 import { makeLayoutItemProps, useLayoutItem } from '@/composables/layout'
 
 // Utilities
-import { toRef, defineComponent, computed } from 'vue'
+import {
+  toRef, defineComponent, computed,
+  Prop,
+} from 'vue'
 
 // Types
-import type { Prop } from 'vue'
+// import { Prop } from 'vue'
 
 export default defineComponent({
   name: 'VLayoutItem',

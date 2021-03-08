@@ -21,7 +21,7 @@ import { VNode } from 'vue'
 import mixins from '../../util/mixins'
 
 /* @vue/component */
-export default mixins(Colorable, Delayable, Dependent, Detachable, Menuable, Toggleable).extend({
+export default defineComponent<Colorable & Delayable & Dependent & Detachable & Menuable & Toggleable> ({
   name: 'v-tooltip',
 
   props: {

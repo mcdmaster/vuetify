@@ -49,7 +49,7 @@ interface options extends ExtractVue<typeof baseMixins> {
   $route: Route
 }
 
-export default baseMixins.extend<options>().extend({
+export default defineComponent<baseMixins> ({
   name: 'v-list-group',
 
   directives: { ripple },

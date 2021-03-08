@@ -51,7 +51,7 @@ interface VCalendarRenderProps {
 }
 
 /* @vue/component */
-export default CalendarWithEvents.extend({
+export default defineComponent<CalendarWithEvents> ({
   name: 'v-calendar',
 
   props: {

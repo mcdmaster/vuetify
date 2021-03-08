@@ -2,16 +2,22 @@
 import './VIcon.sass'
 
 // Utilities
-import { computed, ComputedRef, defineComponent } from 'vue'
+import {
+  computed, ComputedRef, defineComponent,
+  PropType, VNode,
+} from 'vue'
 import { makeSizeProps, useSize } from '@/composables/size'
-import { useIcon } from '@/composables/icons'
+import {
+  useIcon,
+  IconValue,
+} from '@/composables/icons'
 import { convertToUnit, flattenFragments } from '@/util'
 import { makeTagProps } from '@/composables/tag'
 import makeProps from '@/util/makeProps'
 
 // Types
-import type { IconValue } from '@/composables/icons'
-import type { PropType } from 'vue'
+// import { IconValue } from '@/composables/icons'
+// import { PropType } from 'vue'
 
 export default defineComponent({
   name: 'VIcon',
@@ -21,7 +27,7 @@ export default defineComponent({
     left: Boolean,
     right: Boolean,
     icon: {
-      type: [String, Object] as PropType<IconValue>,
+      type: [String, Object] as PropType<IconValue | VNode>,
     },
     ...makeSizeProps(),
     ...makeTagProps({ tag: 'i' }),
@@ -34,7 +40,7 @@ export default defineComponent({
         const slot = slots.default?.()
         if (!slot) return
 
-        return flattenFragments(slot).filter(node =>
+        return flattenFragments(slot).filter((node: any) =>
           node.children && typeof node.children === 'string'
         )[0]?.children as string
       })

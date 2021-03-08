@@ -18,7 +18,7 @@ import { breaking } from '../../util/console'
 import { VNode, PropType } from 'vue'
 
 /* @vue/component */
-export default VSheet.extend({
+export default defineComponent<VSheet> ({
   name: 'v-toolbar',
 
   props: {

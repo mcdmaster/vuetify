@@ -24,18 +24,15 @@ interface options extends Vue {
   }
 }
 
-export default mixins<options &
+export default defineComponent<options &
 /* eslint-disable indent */
   ExtractVue<[
     typeof Colorable,
     typeof Themeable
   ]>
 /* eslint-enable indent */
->(
-  Colorable,
-  Themeable
 /* @vue/component */
-).extend({
+> ({
   name: 'v-time-picker-clock',
 
   props: {

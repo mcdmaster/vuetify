@@ -18,7 +18,7 @@ import { VNode, VNodeData } from 'vue'
 import { Prop } from 'vue/types/options'
 
 /* @vue/component */
-export default mixins(Positionable, Toggleable, Transitionable).extend({
+export default defineComponent<Positionable & Toggleable & Transitionable> ({
   name: 'v-speed-dial',
 
   directives: { ClickOutside },

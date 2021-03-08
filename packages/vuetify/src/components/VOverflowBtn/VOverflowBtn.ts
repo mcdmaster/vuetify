@@ -16,7 +16,7 @@ import VBtn from '../VBtn'
 import { consoleWarn } from '../../util/console'
 
 /* @vue/component */
-export default VAutocomplete.extend({
+export default defineComponent<VAutocomplete> ({
   name: 'v-overflow-btn',
 
   props: {

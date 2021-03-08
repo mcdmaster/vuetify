@@ -32,7 +32,7 @@ interface options {
 }
 
 /* @vue/component */
-export default Vue.extend<Vue & Toggleable & Stackable & options>().extend({
+export default defineComponent<Vue & Toggleable & Stackable & options> ({
   name: 'overlayable',
 
   props: {

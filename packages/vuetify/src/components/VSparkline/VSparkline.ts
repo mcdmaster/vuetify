@@ -46,15 +46,13 @@ interface options extends Vue {
   }
 }
 
-export default mixins<options &
+export default defineComponent<options &
 /* eslint-disable indent */
   ExtractVue<[
     typeof Colorable
   ]>
 /* eslint-enable indent */
->(
-  Colorable
-).extend({
+> ({
   name: 'VSparkline',
 
   inheritAttrs: false,

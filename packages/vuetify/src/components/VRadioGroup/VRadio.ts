@@ -39,7 +39,7 @@ interface options extends InstanceType<typeof baseMixins> {
 }
 
 /* @vue/component */
-export default baseMixins.extend<options>().extend({
+export default defineComponent<baseMixins> ({
   name: 'v-radio',
 
   inheritAttrs: false,

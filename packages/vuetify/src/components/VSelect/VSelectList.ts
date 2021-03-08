@@ -35,7 +35,7 @@ import { SelectItemKey } from 'vuetify/types'
 type ListTile = { item: any, disabled?: null | boolean, value?: boolean, index: number };
 
 /* @vue/component */
-export default mixins(Colorable, Themeable).extend({
+export default defineComponent<Colorable & Themeable> ({
   name: 'v-select-list',
 
   // https://github.com/vuejs/vue/issues/6872

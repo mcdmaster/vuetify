@@ -6,7 +6,7 @@ import { VNodeData } from 'vue/types/vnode'
 import { consoleError } from '../../util/console'
 import { isCssColor } from '../../util/colorUtils'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'colorable',
 
   props: {

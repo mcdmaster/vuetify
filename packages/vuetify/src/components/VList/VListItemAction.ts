@@ -5,7 +5,7 @@
 import Vue, { VNode } from 'vue'
 
 /* @vue/component */
-export default Vue.extend({
+export default defineComponent({
   name: 'v-list-item-action',
 
   functional: true,

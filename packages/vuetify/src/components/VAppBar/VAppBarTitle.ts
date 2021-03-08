@@ -22,7 +22,7 @@ interface options extends ExtractVue<typeof base> {
   }
 }
 
-export default base.extend<options>().extend({
+export default defineComponent<base> ({
   name: 'v-app-bar-title',
 
   data: () => ({

@@ -74,10 +74,10 @@ function searchTableItems (
 }
 
 /* @vue/component */
-export default mixins(
-  VDataIterator,
-  Loadable,
-).extend({
+export default defineComponent<
+  VDataIterator &
+  Loadable
+> ({
   name: 'v-data-table',
 
   // https://github.com/vuejs/vue/issues/6872

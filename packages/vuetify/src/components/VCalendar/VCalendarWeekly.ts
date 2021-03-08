@@ -25,7 +25,7 @@ import {
 import { CalendarTimestamp, CalendarFormatter } from 'vuetify/types'
 
 /* @vue/component */
-export default CalendarBase.extend({
+export default defineComponent<CalendarBase> ({
   name: 'v-calendar-weekly',
 
   props: props.weeks,

@@ -13,7 +13,7 @@ import Vue, { VNode, VNodeChildrenArrayContents, PropType } from 'vue'
 import { DataPagination, DataOptions, DataItemsPerPageOption } from 'vuetify/types'
 import { PropValidator } from 'vue/types/options'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'v-data-footer',
 
   props: {

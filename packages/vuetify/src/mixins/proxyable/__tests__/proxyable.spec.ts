@@ -9,7 +9,7 @@ import {
 } from '@vue/test-utils'
 
 describe.skip('proxyable.ts', () => {
-  const Mock = Proxyable.extend({
+  const Mock = defineComponent<Proxyable> ({
     render: h => h('div'),
   })
 

@@ -16,7 +16,7 @@ import mixins from '../../util/mixins'
 import { convertToUnit } from '../../util/helpers'
 
 /* @vue/component */
-export default mixins(Themeable).extend({
+export default defineComponent<Themeable> ({
   name: 'v-label',
 
   functional: true,

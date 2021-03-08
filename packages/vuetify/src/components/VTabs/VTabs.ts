@@ -37,7 +37,7 @@ interface options extends ExtractVue<typeof baseMixins> {
   }
 }
 
-export default baseMixins.extend<options>().extend({
+export default defineComponent<baseMixins> ({
   name: 'v-tabs',
 
   directives: {

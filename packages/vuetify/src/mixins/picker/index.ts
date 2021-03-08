@@ -15,12 +15,12 @@ import mixins from '../../util/mixins'
 // Types
 import { VNode } from 'vue'
 
-export default mixins(
-  Colorable,
-  Elevatable,
+export default defineComponent<
+  Colorable &
+  Elevatable &
   Themeable
 /* @vue/component */
-).extend({
+> ({
   name: 'picker',
 
   props: {

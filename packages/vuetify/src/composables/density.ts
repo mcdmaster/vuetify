@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import propsFactory from '@/util/propsFactory'
 
 // Types
-import type { PropType } from 'vue'
+import { PropType } from 'vue'
 
 const allowedDensities = ['default', 'comfortable', 'compact'] as const
 

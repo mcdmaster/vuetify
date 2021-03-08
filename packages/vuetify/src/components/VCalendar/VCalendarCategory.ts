@@ -17,7 +17,7 @@ import props from './util/props'
 import { getParsedCategories } from './util/parser'
 
 /* @vue/component */
-export default VCalendarDaily.extend({
+export default defineComponent<VCalendarDaily> ({
   name: 'v-calendar-category',
 
   props: props.category,

@@ -12,7 +12,7 @@ import { VNode } from 'vue'
 import mixins from '../../util/mixins'
 
 /* @vue/component */
-export default mixins(Themeable).extend({
+export default defineComponent<Themeable> ({
   name: 'v-counter',
 
   functional: true,

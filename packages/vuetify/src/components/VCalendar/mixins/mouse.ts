@@ -22,7 +22,7 @@ export type MouseEventsMap = {
   [event: string]: MouseHandler | MouseHandler[]
 }
 
-export default Vue.extend({
+export default defineComponent({
   name: 'mouse',
 
   methods: {

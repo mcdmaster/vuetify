@@ -18,11 +18,11 @@ import mixins from '../../util/mixins'
 import { VNode } from 'vue'
 
 /* @vue/component */
-export default mixins(
-  Loadable,
-  Routable,
+export default defineComponent<
+  Loadable &
+  Routable &
   VSheet
-).extend({
+> ({
   name: 'v-card',
 
   props: {

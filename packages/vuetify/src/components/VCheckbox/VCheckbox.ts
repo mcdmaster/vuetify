@@ -13,7 +13,7 @@ import VInput from '../VInput'
 import Selectable from '../../mixins/selectable'
 
 /* @vue/component */
-export default Selectable.extend({
+export default defineComponent<Selectable> ({
   name: 'v-checkbox',
 
   props: {

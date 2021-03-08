@@ -11,7 +11,7 @@ import mixins from '../../util/mixins'
 import { VNode } from 'vue/types'
 
 /* @vue/component */
-export default mixins(Colorable).extend({
+export default defineComponent<Colorable> ({
   name: 'v-tabs-slider',
 
   render (h): VNode {

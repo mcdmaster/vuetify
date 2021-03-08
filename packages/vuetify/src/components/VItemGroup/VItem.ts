@@ -13,7 +13,7 @@ import Vue from 'vue'
 import { VNode, ScopedSlotChildren } from 'vue/types/vnode'
 
 /* @vue/component */
-export const BaseItem = Vue.extend({
+export const BaseItem = defineComponent({
   props: {
     activeClass: String,
     value: {
@@ -66,9 +66,9 @@ export const BaseItem = Vue.extend({
   },
 })
 
-export default mixins(
-  BaseItem,
+export default defineComponent<
+  BaseItem &
   GroupableFactory('itemGroup', 'v-item', 'v-item-group')
-).extend({
+> ({
   name: 'v-item',
 })

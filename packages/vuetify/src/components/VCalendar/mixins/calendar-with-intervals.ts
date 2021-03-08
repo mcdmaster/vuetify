@@ -20,7 +20,7 @@ import {
 import { CalendarTimestamp, CalendarFormatter, CalendarDayBodySlotScope } from 'vuetify/types'
 
 /* @vue/component */
-export default CalendarBase.extend({
+export default defineComponent<CalendarBase> ({
   name: 'calendar-with-intervals',
 
   props: props.intervals,

@@ -8,7 +8,7 @@ import VWindow from '../VWindow/VWindow'
 import { BaseItemGroup, GroupableInstance } from './../VItemGroup/VItemGroup'
 
 /* @vue/component */
-export default VWindow.extend({
+export default defineComponent<VWindow> ({
   name: 'v-tabs-items',
 
   props: {

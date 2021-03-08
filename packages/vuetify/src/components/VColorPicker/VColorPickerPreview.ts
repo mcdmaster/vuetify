@@ -14,7 +14,7 @@ import { RGBtoCSS, RGBAtoCSS } from '../../util/colorUtils'
 import Vue, { VNode, VNodeData, PropType } from 'vue'
 import { VColorPickerColor, fromHSVA } from './util'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'v-color-picker-preview',
 
   props: {

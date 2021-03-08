@@ -2,7 +2,7 @@
 import { defineComponent, TransitionGroup, Transition, h } from 'vue'
 
 // Types
-import type { FunctionalComponent, Prop } from 'vue'
+import { FunctionalComponent, Prop } from 'vue'
 
 export function createCssTransition (
   name: string,

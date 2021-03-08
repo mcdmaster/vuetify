@@ -46,7 +46,7 @@ export const modes = {
   },
 } as { [key: string]: Mode }
 
-export default Vue.extend({
+export default defineComponent({
   name: 'v-color-picker-edit',
 
   props: {

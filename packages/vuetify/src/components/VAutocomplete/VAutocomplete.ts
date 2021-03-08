@@ -28,7 +28,7 @@ const defaultMenuProps = {
 }
 
 /* @vue/component */
-export default VSelect.extend({
+export default defineComponent<VSelect> ({
   name: 'v-autocomplete',
 
   props: {

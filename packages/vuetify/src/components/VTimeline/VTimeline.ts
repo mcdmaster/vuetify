@@ -11,10 +11,10 @@ import mixins from '../../util/mixins'
 // Mixins
 import Themeable from '../../mixins/themeable'
 
-export default mixins(
+export default defineComponent<
   Themeable
 /* @vue/component */
-).extend({
+> ({
   name: 'v-timeline',
 
   provide (): object {

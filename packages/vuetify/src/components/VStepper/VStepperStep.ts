@@ -29,7 +29,7 @@ interface options extends InstanceType<typeof baseMixins> {
   stepClick: (step: number | string) => void
 }
 /* @vue/component */
-export default baseMixins.extend<options>().extend({
+export default defineComponent<baseMixins> ({
   name: 'v-stepper-step',
 
   directives: { ripple },

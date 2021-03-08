@@ -29,11 +29,11 @@ function validateAttachTarget (val: any) {
 }
 
 /* @vue/component */
-export default mixins<options &
+export default defineComponent<options &
   /* eslint-disable indent */
   ExtractVue<typeof Bootable>
   /* eslint-enable indent */
->(Bootable).extend({
+> ({
   name: 'detachable',
 
   props: {

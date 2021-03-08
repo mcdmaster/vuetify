@@ -5,7 +5,7 @@
 import VWindowItem from '../VWindow/VWindowItem'
 
 /* @vue/component */
-export default VWindowItem.extend({
+export default defineComponent<VWindowItem> ({
   name: 'v-tab-item',
 
   props: {

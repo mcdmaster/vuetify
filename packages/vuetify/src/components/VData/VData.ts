@@ -17,7 +17,7 @@ import {
 } from 'vuetify/types'
 import { PropValidator } from 'vue/types/options'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'v-data',
 
   inheritAttrs: false,

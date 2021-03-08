@@ -23,7 +23,7 @@ import { keyCodes } from '../../util/helpers'
 import { VNode, VNodeData } from 'vue'
 
 /* @vue/component */
-export default Selectable.extend({
+export default defineComponent<Selectable> ({
   name: 'v-switch',
 
   directives: { Touch },

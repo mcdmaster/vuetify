@@ -20,11 +20,11 @@ import { VNode } from 'vue'
 type VExpansionPanelHeaderInstance = InstanceType<typeof VExpansionPanelHeader>
 type VExpansionPanelContentInstance = InstanceType<typeof VExpansionPanelContent>
 
-export default mixins(
-  GroupableFactory<'expansionPanels', typeof VExpansionPanels>('expansionPanels', 'v-expansion-panel', 'v-expansion-panels'),
+export default defineComponent<
+  GroupableFactory<'expansionPanels' & typeof VExpansionPanels>('expansionPanels', 'v-expansion-panel', 'v-expansion-panels')
   RegistrableProvide('expansionPanel', true)
   /* @vue/component */
-).extend({
+> ({
   name: 'v-expansion-panel',
 
   props: {

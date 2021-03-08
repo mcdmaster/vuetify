@@ -7,7 +7,7 @@ import mixins from '../../util/mixins'
 import { VNode } from 'vue'
 
 /* @vue/component */
-export default mixins(Routable).extend({
+export default defineComponent<Routable>({
   name: 'v-breadcrumbs-item',
 
   props: {

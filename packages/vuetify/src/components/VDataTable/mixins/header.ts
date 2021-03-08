@@ -17,7 +17,7 @@ interface options extends Vue {
   dataTable: VDataTableInstance
 }
 
-export default mixins<options>().extend({
+export default defineComponent<options> ({
   // https://github.com/vuejs/vue/issues/6872
   directives: {
     ripple,

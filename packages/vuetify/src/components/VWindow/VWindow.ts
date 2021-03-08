@@ -18,7 +18,7 @@ import VIcon from '../VIcon'
 import { BaseItemGroup } from '../VItemGroup/VItemGroup'
 
 /* @vue/component */
-export default BaseItemGroup.extend({
+export default defineComponent<BaseItemGroup> ({
   name: 'v-window',
 
   directives: { Touch },

@@ -15,12 +15,12 @@ import { convertToUnit } from '../../util/helpers'
 import { VNode } from 'vue'
 import mixins from '../../util/mixins'
 
-export default mixins(
-  Colorable,
-  Measurable,
-  Roundable,
+export default defineComponent<
+  Colorable &
+  Measurable &
+  Roundable
   /* @vue/component */
-).extend({
+> ({
   name: 'v-avatar',
 
   props: {

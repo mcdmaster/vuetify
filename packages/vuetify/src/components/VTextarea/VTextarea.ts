@@ -26,7 +26,7 @@ const baseMixins = mixins<options &
 )
 
 /* @vue/component */
-export default baseMixins.extend({
+export default defineComponent<baseMixins> ({
   name: 'v-textarea',
 
   props: {

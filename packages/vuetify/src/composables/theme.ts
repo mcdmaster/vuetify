@@ -3,7 +3,7 @@ import { computed, inject, provide, ref, watch } from 'vue'
 import { colorToInt, colorToRGB, createRange, intToHex, lighten, darken, getLuma } from '@/util'
 
 // Types
-import type { InjectionKey, Ref, SetupContext } from 'vue'
+import { InjectionKey, Ref, SetupContext } from 'vue'
 
 interface BaseColors {
   background: string

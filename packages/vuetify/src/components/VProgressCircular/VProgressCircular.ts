@@ -14,7 +14,7 @@ import { convertToUnit } from '../../util/helpers'
 import { VNode, VNodeChildren } from 'vue'
 
 /* @vue/component */
-export default Colorable.extend({
+export default defineComponent<Colorable> ({
   name: 'v-progress-circular',
 
   props: {

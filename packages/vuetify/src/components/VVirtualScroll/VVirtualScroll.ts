@@ -20,7 +20,7 @@ import {
 import { VNode } from 'vue'
 import { PropValidator } from 'vue/types/options'
 
-export default Measurable.extend({
+export default defineComponent<Measurable> ({
   name: 'v-virtual-scroll',
 
   directives: { Scroll },

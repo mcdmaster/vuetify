@@ -51,7 +51,7 @@ interface options extends InstanceType<typeof baseMixins> {
 const dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'month']
 
 /* @vue/component */
-export default baseMixins.extend<options>().extend({
+export default defineComponent<baseMixins> ({
   name: 'v-text-field',
 
   directives: {

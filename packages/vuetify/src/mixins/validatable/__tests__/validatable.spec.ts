@@ -10,7 +10,7 @@ import {
 // import { wait } from '../../../../test'
 
 describe.skip('validatable.ts', () => {
-  const Mock = Validatable.extend({
+  const Mock = defineComponent<Validatable> ({
     render: h => h('div'),
   })
 

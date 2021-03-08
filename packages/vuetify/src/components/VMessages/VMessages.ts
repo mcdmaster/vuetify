@@ -17,7 +17,7 @@ import mixins from '../../util/mixins'
 import { getSlot } from '../../util/helpers'
 
 /* @vue/component */
-export default mixins(Colorable, Themeable).extend({
+export default defineComponent<Colorable & Themeable> ({
   name: 'v-messages',
 
   props: {

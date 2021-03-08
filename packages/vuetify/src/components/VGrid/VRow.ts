@@ -9,7 +9,7 @@ import { capitalize, computed, defineComponent, h } from 'vue'
 import makeProps from '@/util/makeProps'
 
 // Types
-import type { Prop } from 'vue'
+import { Prop } from 'vue'
 
 const breakpoints = ['sm', 'md', 'lg', 'xl'] as const // no xs
 

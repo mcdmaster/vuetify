@@ -20,11 +20,11 @@ import mixins from '../../util/mixins'
 import { VNode, CreateElement, VNodeChildrenArrayContents } from 'vue'
 
 /* @vue/component */
-export default mixins(
-  Colorable,
-  Intersectable({ onVisible: ['init'] }),
+export default defineComponent<
+  Colorable &
+  Intersectable({ onVisible: ['init'] }) &
   Themeable
-).extend({
+> ({
   name: 'v-pagination',
 
   directives: { Resize },

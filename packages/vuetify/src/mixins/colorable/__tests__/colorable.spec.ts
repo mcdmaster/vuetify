@@ -9,7 +9,7 @@ import {
 } from '@vue/test-utils'
 
 describe.skip('colorable.ts', () => {
-  const Mock = Colorable.extend({
+  const Mock = defineComponent<Colorable> ({
     render: h => h('div'),
   })
 

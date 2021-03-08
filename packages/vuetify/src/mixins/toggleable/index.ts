@@ -7,7 +7,7 @@ export type Toggleable<T extends string = 'value'> = VueConstructor<Vue & { isAc
 
 export function factory<T extends string = 'value'> (prop?: T, event?: string): Toggleable<T>
 export function factory (prop = 'value', event = 'input') {
-  return Vue.extend({
+  return defineComponent({
     name: 'toggleable',
 
     model: { prop, event },

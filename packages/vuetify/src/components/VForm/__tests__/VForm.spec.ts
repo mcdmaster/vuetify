@@ -61,7 +61,7 @@ describe.skip('VForm.ts', () => {
   // TODO: event not bubbling or something
   it.skip('should pass on listeners to form element', async () => {
     const submit = jest.fn()
-    const component = Vue.component('test', {
+    const component = defineComponent('test', {
       render (h) {
         return h(VForm, {
           on: {

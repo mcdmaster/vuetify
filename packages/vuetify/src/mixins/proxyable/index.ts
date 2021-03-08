@@ -13,7 +13,7 @@ export function factory (
   prop = 'value',
   event = 'change'
 ) {
-  return Vue.extend({
+  return defineComponent({
     name: 'proxyable',
 
     model: {

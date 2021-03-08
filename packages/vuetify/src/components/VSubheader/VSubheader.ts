@@ -11,10 +11,10 @@ import mixins from '../../util/mixins'
 // Types
 import { VNode } from 'vue'
 
-export default mixins(
+export default defineComponent<
   Themeable
   /* @vue/component */
-).extend({
+> ({
   name: 'v-subheader',
 
   props: {

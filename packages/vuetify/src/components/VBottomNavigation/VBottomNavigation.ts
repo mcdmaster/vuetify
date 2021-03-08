@@ -21,19 +21,19 @@ import { breaking } from '../../util/console'
 // Types
 import { VNode } from 'vue'
 
-export default mixins(
+export default defineComponent<
   Applicationable('bottom', [
     'height',
     'inputValue',
-  ]),
-  Colorable,
-  Measurable,
-  ToggleableFactory('inputValue'),
-  Proxyable,
-  Scrollable,
+  ]) &
+  Colorable &
+  Measurable &
+  ToggleableFactory('inputValue') &
+  Proxyable &
+  Scrollable &
   Themeable
   /* @vue/component */
-).extend({
+> ({
   name: 'v-bottom-navigation',
 
   props: {

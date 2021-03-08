@@ -12,7 +12,7 @@ import {
 } from '@vue/test-utils'
 
 describe.skip('Selectable.ts', () => {
-  const Mock = Selectable.extend({
+  const Mock = defineComponent<Selectable> ({
     render: h => h('div'),
   })
 

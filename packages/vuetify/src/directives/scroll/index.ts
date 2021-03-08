@@ -1,4 +1,4 @@
-import type { DirectiveBinding } from 'vue'
+import { DirectiveBinding } from 'vue'
 
 interface ScrollDirectiveBinding extends Omit<DirectiveBinding, 'modifiers'> {
   value: EventListener | {

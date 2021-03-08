@@ -20,7 +20,7 @@ import rebuildSlots from '../../util/rebuildFunctionalSlots'
 import Vue from 'vue'
 
 /* @vue/component */
-export default Vue.extend({
+export default defineComponent({
   name: 'v-data-table-header',
 
   functional: true,

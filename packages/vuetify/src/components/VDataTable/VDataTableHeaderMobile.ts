@@ -8,7 +8,7 @@ import VChip from '../VChip'
 import header from './mixins/header'
 import { wrapInArray } from '../../util/helpers'
 
-export default mixins(header).extend({
+export default defineComponent<header> ({
   name: 'v-data-table-header-mobile',
 
   props: {

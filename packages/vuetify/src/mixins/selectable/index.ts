@@ -16,11 +16,11 @@ export function prevent (e: Event) {
 }
 
 /* @vue/component */
-export default mixins(
-  VInput,
-  Rippleable,
+export default defineComponent<
+  VInput &
+  Rippleable &
   Comparable
-).extend({
+> ({
   name: 'selectable',
 
   model: {

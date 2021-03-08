@@ -18,7 +18,7 @@ describe.skip('color.ts', () => {
 
   beforeEach(() => {
     mountFunction = (directive = {}) => {
-      return mount(Vue.component('test', {
+      return mount(defineComponent('test', {
         directives: { Color },
         data: () => ({
           color: '',

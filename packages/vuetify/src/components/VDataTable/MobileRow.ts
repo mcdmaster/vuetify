@@ -5,7 +5,7 @@ import Vue, { VNode, PropType } from 'vue'
 import { getObjectValueByPath } from '../../util/helpers'
 import { DataTableHeader } from 'vuetify/types'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'row',
 
   functional: true,

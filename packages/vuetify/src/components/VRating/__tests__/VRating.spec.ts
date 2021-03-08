@@ -230,7 +230,7 @@ describe.skip('VRating.ts', () => {
     const vm = new Vue()
     const itemSlot = () => [vm.$createElement('span', 'foobar')]
 
-    const component = Vue.component('test', {
+    const component = defineComponent('test', {
       render: h => h(VRating, {
         scopedSlots: {
           item: itemSlot,

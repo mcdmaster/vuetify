@@ -45,11 +45,11 @@ type NodeState = {
   item: any
 }
 
-export default mixins(
-  RegistrableProvide('treeview'),
+export default defineComponent<
+  RegistrableProvide('treeview') &
   Themeable
   /* @vue/component */
-).extend({
+> ({
   name: 'v-treeview',
 
   provide (): object {

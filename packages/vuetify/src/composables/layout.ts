@@ -4,7 +4,7 @@ import { getUid, convertToUnit } from '@/util'
 import propsFactory from '@/util/propsFactory'
 
 // Types
-import type { InjectionKey, Ref, Prop } from 'vue'
+import { InjectionKey, Ref, Prop } from 'vue'
 
 type Position = 'top' | 'left' | 'right' | 'bottom'
 

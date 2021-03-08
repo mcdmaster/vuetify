@@ -3,7 +3,7 @@ import Touch from '../'
 
 // Types
 import { nextTick } from 'vue'
-import type { TouchValue } from '@/../types'
+import { TouchValue } from '@/../types'
 
 // Utilities
 import { mount } from '@vue/test-utils'

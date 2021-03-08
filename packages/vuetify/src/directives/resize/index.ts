@@ -1,4 +1,4 @@
-import type { DirectiveBinding, ObjectDirective } from 'vue'
+import { DirectiveBinding, ObjectDirective } from 'vue'
 
 interface ResizeDirectiveBinding extends Omit<DirectiveBinding, 'modifiers'> {
   value: (() => void)

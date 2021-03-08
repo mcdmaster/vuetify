@@ -105,7 +105,7 @@ describe.skip('VSelect.ts', () => {
       item.text,
     ])
     const selectionSlot = ({ item }) => vm.$createElement('v-list-item', item.value)
-    const component = Vue.component('test', {
+    const component = defineComponent('test', {
       render (h) {
         return h(VSelect, {
           props: { items, value: 1 },
@@ -139,7 +139,7 @@ describe.skip('VSelect.ts', () => {
     }, [
       vm.$createElement('v-list-item-title', [item.value]),
     ])
-    const component = Vue.component('test', {
+    const component = defineComponent('test', {
       render (h) {
         return h(VSelect, {
           props: { items },
@@ -160,7 +160,7 @@ describe.skip('VSelect.ts', () => {
   it('should render v-select correctly when not using scope slot', async () => {
     const items = Array.from({ length: 2 }, (x, i) => ({ value: i, text: `Text ${i}` }))
 
-    const component = Vue.component('test', {
+    const component = defineComponent('test', {
       render (h) {
         return h(VSelect, {
           props: { items },

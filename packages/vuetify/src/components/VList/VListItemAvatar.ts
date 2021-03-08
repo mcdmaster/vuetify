@@ -8,7 +8,7 @@ import VAvatar from '../VAvatar'
 import { VNode } from 'vue'
 
 /* @vue/component */
-export default VAvatar.extend({
+export default defineComponent<VAvatar> ({
   name: 'v-list-item-avatar',
 
   props: {

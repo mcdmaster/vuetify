@@ -14,10 +14,10 @@ import mixins from '../../util/mixins'
 import { VNode, VNodeChildren, PropType } from 'vue'
 import { DatePickerFormatter } from 'vuetify/types'
 
-export default mixins(
+export default defineComponent<
   DatePickerTable
 /* @vue/component */
-).extend({
+> ({
   name: 'v-date-picker-date-table',
 
   props: {

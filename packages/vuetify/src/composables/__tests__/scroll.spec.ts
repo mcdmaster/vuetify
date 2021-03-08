@@ -6,7 +6,7 @@ import {
   makeScrollProps,
   useScroll,
 } from '../scroll'
-import type { ScrollArguments } from '../scroll'
+import { ScrollArguments } from '../scroll'
 
 // Utils
 import {

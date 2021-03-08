@@ -24,7 +24,7 @@ interface options extends InstanceType<typeof baseMixins> {
   cachedItems: VNodeChildren
 }
 
-export default baseMixins.extend<options>().extend({
+export default defineComponent<baseMixins> ({
   name: 'v-virtual-table',
 
   props: {

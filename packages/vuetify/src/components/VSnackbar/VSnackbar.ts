@@ -21,10 +21,10 @@ import { deprecate, removed } from '../../util/console'
 // Types
 import { PropType, VNode } from 'vue'
 
-export default mixins(
-  VSheet,
-  Colorable,
-  Toggleable,
+export default defineComponent<
+  VSheet &
+  Colorable &
+  Toggleable &
   PositionableFactory([
     'absolute',
     'bottom',
@@ -33,7 +33,7 @@ export default mixins(
     'top',
   ])
 /* @vue/component */
-).extend({
+> ({
   name: 'v-snackbar',
 
   props: {

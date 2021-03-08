@@ -8,7 +8,7 @@ import header from './mixins/header'
 import { wrapInArray, convertToUnit } from '../../util/helpers'
 import { DataTableHeader } from 'vuetify/types'
 
-export default mixins(header).extend({
+export default defineComponent<header> ({
   name: 'v-data-table-header-desktop',
 
   methods: {

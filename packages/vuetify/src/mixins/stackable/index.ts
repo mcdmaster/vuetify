@@ -12,7 +12,7 @@ interface options extends Vue {
 }
 
 /* @vue/component */
-export default Vue.extend<options>().extend({
+export default defineComponent<options> ({
   name: 'stackable',
 
   data () {

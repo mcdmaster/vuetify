@@ -22,7 +22,7 @@ function createBtn (val = null) {
   }
   if (val) options.attrs = { value: val }
 
-  return Vue.component('test', {
+  return defineComponent('test', {
     render (h) {
       return h(VBtn, options)
     },

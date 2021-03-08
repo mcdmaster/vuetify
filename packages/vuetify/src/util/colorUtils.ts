@@ -5,7 +5,7 @@ import * as sRGB from '@/util/color/transformSRGB'
 import * as CIELAB from '@/util/color/transformCIELAB'
 
 // Types
-import type { VuetifyThemeVariant } from 'types/services/theme'
+import { VuetifyThemeVariant } from 'types/services/theme'
 
 export type ColorInt = number
 export type XYZ = [number, number, number]

@@ -12,11 +12,11 @@ import { consoleWarn } from '../../util/console'
 // Types
 import { VNode, ScopedSlotChildren } from 'vue/types/vnode'
 
-export default mixins(
+export default defineComponent<
   Delayable,
   Toggleable
   /* @vue/component */
-).extend({
+> ({
   name: 'v-hover',
 
   props: {
